@@ -27,8 +27,8 @@ for(int i = 1; i < argc; i++){
       }
       if (match==0) break;
      }
-      if(match==0) cout<<"argv "<<i<<" is incorrect: mismatch"<<endl;
-     else if(s.fetch()>0) cout<<"argv "<<i<<" is incorrect: too many open parentheses."<<endl;
+      if(match==0) cout<<"argv "<<i<<" is incorrect:mismatch"<<endl;
+     else if(s.fetch()>0) cout<<"argv "<<i<<" is incorrect:too many open parentheses."<<endl;
      else cout<<"argv "<<i<<" is correct."<<endl;
     }
     
