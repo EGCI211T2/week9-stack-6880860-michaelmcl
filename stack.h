@@ -17,6 +17,7 @@ public:
 
 void Stack::push(char x){
   NodePtr new_node=new NODE(x);
+
   if(new_node){
         new_node->set_next(top);
         top = new_node;
@@ -30,7 +31,8 @@ char Stack::pop(){
     if(size>0)
     {
         NodePtr t=top;
-        int value;
+        char value;
+        value = t->get_value();
         top=t->get_next(); 
         delete t;
         size--;
@@ -38,7 +40,7 @@ char Stack::pop(){
 	//be careful of the empty stack!!!
     }
     else{
-        cout<<"Empty stack"<<endl;
+       // cout<<"Empty stack"<<endl;
         return -1;
     }
     }

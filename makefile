@@ -1,5 +1,3 @@
-make: main2.cpp
-	g++ main2.cpp
 
 compile: main.cpp
 	g++ main.cpp -o stack1
