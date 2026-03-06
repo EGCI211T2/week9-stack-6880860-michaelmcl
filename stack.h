@@ -6,40 +6,56 @@ class Stack {
 	NodePtr top;
 	int size;
 public:
-    void push(int);
-    int pop();
+    void push(char);
+    char pop();
     Stack();
     ~Stack();
+    bool isEmpty(){return size == 0;}
+    int fetch();
 };
 
 
-void Stack::push(int x){
+void Stack::push(char x){
   NodePtr new_node=new NODE(x);
   if(new_node){
-            // Left missing for exercises…
+        new_node->set_next(top);
+        top = new_node;
+        size++;   // Link to previous top, change the top, increase the size
    }
- 
-         // Left missing for exercises…
+ else cout<<"Not enough memory"<<endl;
     
 }
 
-int Stack::pop(){
+char Stack::pop(){ 
+    if(size>0)
+    {
         NodePtr t=top;
         int value;
-        value=t->get_value();
-    // Left missing part for exercises
+        top=t->get_next(); 
         delete t;
+        size--;
         return value;
 	//be careful of the empty stack!!!
     }
+    else{
+        cout<<"Empty stack"<<endl;
+        return -1;
+    }
+    }
 
 Stack::Stack(){
+    top=NULL;
+    size=0;
     //initialize stack
     
 }
 Stack::~Stack(){
     //delete all remaning stack (i.e. pop all) 
-    
+    while(size>0) pop();
+}
+
+int Stack::fetch(){
+    return size;
 }
 
 
